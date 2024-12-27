@@ -3,6 +3,13 @@
 
 locals {
   name_suffix = "${var.resource_tags.project}-${var.resource_tags.environment}"
+  
+  required_tags = {
+    project = var.project_name,
+    environment = var.environment
+  }
+  
+  tags = merge(var.resource_tags, local.required_tags)
 }
 
 provider "aws" {
