@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MPL-2.0
 
 locals {
-  name_suffix = "${var.resource_tags.project}-${var.resource_tags.environment}"
+  name_suffix = "${var.project_name}-${var.environment}"
   
   required_tags = {
     project = var.project_name,
